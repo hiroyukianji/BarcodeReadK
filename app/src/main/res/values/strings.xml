@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BarcodeRead</string>
+    <string name="app_name">BarcodeReadK</string>
     <string name="btn_read_barcode">読取開始</string>
     <string name="text_guide">ここに読取結果が表示されます。</string>
 </resources>

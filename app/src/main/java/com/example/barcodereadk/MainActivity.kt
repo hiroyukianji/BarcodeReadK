@@ -11,22 +11,26 @@ import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 
 class MainActivity : AppCompatActivity() {
+    /**
+     * 参考サイト
+     * https://tech.every.tv/entry/2023/12/16/1
+     * https://developers.google.com/ml-kit/vision/barcode-scanning/code-scanner?hl=ja#java
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.read_barcode).setOnClickListener {
+            val textView = findViewById<TextView>(R.id.textBarcode)
+            textView.text = ""
             startReader()
         }
-
     }
     /**
      * バーコード読取処理
      */
     private fun startReader() {
         val textView = findViewById<TextView>(R.id.textBarcode)
-        textView.text = ""
-
         val options = GmsBarcodeScannerOptions.Builder()
             .setBarcodeFormats(            // 読み取るバーコードの種別を設定
                 Barcode.FORMAT_QR_CODE     // 今回は QR コードを読み取るよう設定
